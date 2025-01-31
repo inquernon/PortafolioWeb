@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Jaime Alexander Ortiz, Desarrollador Web y de Videojuegos">
+    <title>Portafolio - Jaime Alexander Ortiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Reemplaza el script de Font Awesome en el head -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <!-- O usa CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Switcher and Dark Mode Toggle -->
+    <div class="header-controls">
+        <button onclick="setLanguage('es')"><i class="fas fa-flag"></i> ES</button>
+        <button onclick="setLanguage('en')"><i class="fas fa-flag-usa"></i> EN</button>
+        <button onclick="toggleDarkMode()" id="darkModeBtn"><i class="fas fa-moon"></i></button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="header-text">
+                <h1> <span class="code-style">¡Hola!</span> Soy <span class="code-style">Jaime Alexander Ortiz</span></h1>
+                <p class="subtitle code-style">Desarrollador Y QA</p>                
+            </div>
+            <div class="header-image">
+                <img src="Alex.jpg" alt="Jaime Alexander Ortiz" class="profile-image">
+            </div>
+            <div class="cta">
+                <button onclick="downloadCV()" class="btn cv-btn">Descargar CV</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2 id="aboutTitle" class="code-style" data-translate="aboutTitle">Sobre mí</h2>
+            <p id="aboutText" class="code-style" data-translate="aboutText">Soy Ingeniero Informático con experiencia en desarrollo de software, videojuegos y pruebas de calidad. Con habilidades avanzadas en tecnologías como Unity, Node.js, PHP, Spring Boot y metodologías ágiles. Apasionado por la innovación tecnológica y la creación de experiencias interactivas para el usuario.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 id="skillsTitle" class="code-style" data-translate="skillsTitle">Mis Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fab fa-php skill-icon"></i>
+                    <p class="code-style">PHP</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js-square skill-icon"></i>
+                    <p class="code-style">JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-file-alt skill-icon"></i>
+                    <p class="code-style">C, C++ y C#</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <p class="code-style">HTML & CSS</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database skill-icon"></i>
+                    <p class="code-style">SQL & PostgreSQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-git-alt skill-icon"></i>
+                    <p class="code-style">Git & GitHub</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-unity skill-icon"></i>
+                    <p class="code-style"> Unity</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-terminal skill-icon"></i>
+                    <p class="code-style">Testing</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-java skill-icon"></i>
+                    <p class="code-style">Java</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python skill-icon"></i>
+                    <p class="code-style">Python</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 id="projectsTitle" class="code-style" data-translate="projectsTitle">Mis Proyectos</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3 class="code-style">Bubblepunk VR</h3>
+                    <p class="code-style">Desarrollo de un juego de realidad virtual utilizando Unity, en 48 horas, para El Global Game Jam 2025.</p>
+                    <a href="https://globalgamejam.org/games/2025/titulo-del-juego-4" class="btn">Ver Global Game Jam</a>
+                </div>
+                <div class="project-card">
+                    <h3 class="code-style">Página Web Gamificada</h3>
+                    <p class="code-style">Página web interactiva con elementos de gamificación para apoyar la metodologia de los profesores del pascual bravo.</p>
+                    <a href="#" class="btn">Ver</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 id="contactTitle" class="code-style" data-translate="contactTitle">Contacto</h2>
+            <p id="contactText" class="code-style" data-translate="contactText">¿Tienes un proyecto en mente o alguna consulta? ¡Contáctame!</p>
+            <form>
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo" required>
+                <textarea placeholder="Tu mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="code-style">© 2024 Jaime Alexander Ortiz. Todos los derechos reservados.</p>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/alexander-ortiz-rios-379703151/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/inquernon" class="social-icon"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+/* General Styles */
+:root {
+    --background: #1e1e1e;
+    --foreground: #d4d4d4;
+    --keyword: #569cd6;
+    --function: #dcdcaa;
+    --string: #ce9178;
+    --number: #b5cea8;
+    --comment: #6a9955;
+    --error: #f44747;
+    --border: #3c3c3c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    color: #e0e0e0;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+body.light {
+    --background: #ffffff;
+    --foreground: #d4d4d4;
+    --keyword: #0000ff;
+    --function: #795e26;
+    --string: #a31515;
+    --number: #098658;
+    --comment: #008000;
+    --error: #e51400;
+    --border: #d4d4d4;
+}
+
+body.dark {
+    background: var(--background);
+    color: var(--foreground);
+}
+.code-style {
+    color: var(--function); /* Color principal */
+}
+.syntax-string { color: var(--string); }
+.syntax-keyword { color: var(--keyword); }
+.syntax-number { color: var(--number); }
+.syntax-comment { color: var(--comment); }
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+}
+
+header h1 {
+    position: relative;
+    padding-left: 1.5em;
+}
+header h1::before {
+    content: ">>> ";
+    position: absolute;
+    left: 0;
+    color: var(--comment);
+}
+
+header .subtitle {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+header .btn {
+    background-color: var(--comment);
+    padding: 15px 30px;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px; /* Botón más cuadrado */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+header .btn:hover {
+    background-color: #3aa58f;
+}
+.header-image{
+    padding-top: 5%;
+}
+
+header .header-image .profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--comment);
+    transition: transform 0.3s ease;
+}
+
+header .header-image .profile-image:hover {
+    transform: scale(1.1);
+}
+
+/* Language Switcher and Dark Mode Button */
+.header-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.header-controls button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #4ec9b0;
+    color: #4ec9b0;
+    padding: 8px 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-controls button:hover {
+    background-color: rgba(78, 201, 176, 0.2);
+}
+
+/* Skills Section */
+#skills {
+    padding: 80px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin: 50px auto;
+}
+
+#skillsTitle {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.skills-container {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.skill-card::before {
+    content: "<skill>";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 0.8em;
+    color: var(--comment);
+}
+
+.skill-card::after {
+    content: "</skill>";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 0.8em;
+    color: var(--comment);
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(78, 201, 176, 0.4);
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(78, 201, 176, 0.2);
+}
+
+.skill-card:hover .skill-icon {
+    color: var(--function);
+}
+.skill-card .skill-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    padding-top: 1em;
+    color: var(--keyword);
+    transition: color 0.3s ease;
+}
+.skill-card p {
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+/* Projects Section */
+#projects {
+    padding: 80px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin: 50px auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#projectsTitle {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-card h3::before {
+    content: "// ";
+    color: var(--comment);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(78, 201, 176, 0.4);
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--function);
+}
+
+
+.project-card p {
+    font-size: 1em;
+    color: var(--foreground);
+    margin-bottom: 15px
+}
+
+.project-card .btn {
+    display: inline-block;
+    background-color: var(--keyword);
+    padding: 10px 20px;
+    color: var(--background);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background-color: var(--string);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(78, 201, 176, 0.2);
+}
+/* Contact Section */
+#contact {
+    padding: 80px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin: 50px auto;
+}
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--foreground);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+    color: var(--comment);
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-color: var(--keyword);
+}
+#contact form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#contact form button {
+    background-color: var(--keyword);
+    color: var(--background);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
+    background-color: var(--string);
+}
+#contactTitle {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#contactText {
+    font-size: 1.2em;
+    text-align: center;
+    color: #ccc;
+}
+
+
+form input, form textarea {
+    font-family: 'Roboto Mono', monospace;
+    border: 1px solid var(--border);
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: var(--comment);
+}
+
+form input:focus, form textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4ec9b0;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #3aa58f;
+}
+
+/* Footer */
+footer {
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #ccc;
+}
+
+footer .socials {
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: #4ec9b0;
+    font-size: 2em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #3aa58f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skill-card, .project-card {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-image {
+        margin-top: 20px;
+    }
+}
